@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" />
+
+  <!--=== Latest compiled and minified JavaScript=== -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./style/style.css" />
+  <title>Project 6</title>
+
+</head>
+
+<body>
+  <!---------------------------------------------------------Modal Start Game ------------------------------------------>
+  <div class="modal fade bg-warning" id="startModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="box-text-button">
+      <h1 id="title" class="title">
+        <span class="welcome">Welcome</span> <span class="to">to </span><span class="the">the </span><span
+          class="game">Game</span>
+      </h1>
+      <button type="button" id="startButton" class="btnStart" data-toggle="modal" data-dismiss="modal">START</button>
+    </div>
+  </div>
+
+<!--==========================================================Board Canvas===============================================-->
+  <div class="main_box">
+    <canvas id="player1" class="player1"></canvas>
+    <canvas id="canvas" class="canvas"></canvas>
+    <canvas id="player2" class="player2"></canvas>
+  </div>
+  <div id="messageBox" class="messageBox">Press Enter to change turn</div>
+  <a id="launchInfoGame" class="launch-infoGame" href="#openModal">Game Rules</a>
+  <div class="box-buttons">
+    <button class="button-Attack" id="buttonAttack">Attack</button>
+    <!-- <div class="button-Attack" id="buttonAttack">Attack</div> -->
+    <button class="button-Defense" id="buttonDefense">Defend</button>
+  </div>
+
+  <!---------------------------------------------------------Modal Info Game ------------------------------------------>
+  <div id="openModal" class="modalDialog">
+    <div class="info-modal">
+      <a href="#close" title="Close" class="close">X</a>
+      <h1 class="title-game-rules">Game Rules</h1>
+      <p>
+      <ol class="rules-text">
+        <li>Each player can move 3 spaces horizontally or vertically.</li>
+        <li>Each player start with 100 points of life.</li>
+        <li>Each player star with a default weapon of 10points power.</li>
+        <li>All the other weapons have different power.</li>
+        <li>If a player passes over a box containing a weapon, they leave their current weapon on site and replace it
+          with the new one.</li>
+        <li>You can change turn pressing enter every time</li>
+        <li>If one of the player is next to the other, start fight</li>
+        <li>When in battle you can attack or defend</li>
+        <li>The damage depends on the player's weapon</li>
+        <li>The player can choose to attack or defend against the next shot</li>
+        <li>If the player chooses to defend themselves, they sustain 50% less damage than normal</li>
+        <li>As soon as the life points of a player (initially 100) falls to 0, they lose. A message appears and the game
+          is over.</li>
+      </ol>
+      </p>
+    </div>
+  </div>
+
+  <!---------------------------------------------------------Modal Game Over ------------------------------------------>
+  <div class="modal fade bg-success" id="GameOver" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="buttons-gameOver-box">
+      <div class="game-over">
+        <h1>GAME OVER</h1>
+      </div>
+      <div id="playerLoser" class="player-loser"></div>
+      <div class="buttons-play-exit">
+        <button class="playAgain" id="playAgain"><a href="index.html">Play Again</a></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./scripts/Rocks.js"></script>
+  <script src="./scripts/Guns.js"></script>
+  <script src="./scripts/Map.js"></script>
+  <script src="./scripts/Player.js"></script>
+  <script src="./scripts/App.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+
+</html>

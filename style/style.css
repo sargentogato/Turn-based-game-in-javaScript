@@ -1,0 +1,282 @@
+html {
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "clubland";
+  src: url("../font/Clubland.woff"), url("../font/Clubland.ttf"),
+    url("../font/Clubland.svg"), url("../font/Clubland.eot");
+}
+
+:root {
+  --canvas_w: 750px;
+  --canvas_h: 500px;
+  --margin-top-general: 2em;
+  --margin-secondary: 6em;
+  --marginplayers: 1em;
+  --marginButtons: 1em;
+  --font-size: 2em;
+  --padding-buttonsUD: 0.5em;
+  --padding-extraUD: 0.5em;
+  --padding-buttonsLR: 1em;
+  --padding-extraLR: 5em;
+}
+
+/********************************************Stsarting Modal****************************/
+.box-text-button {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(96, 10, 233);
+  font-family: "clubland";
+}
+
+.title {
+  text-align: center;
+  color: rgb(81, 243, 66);
+  margin-top: 2em;
+  font-size: 5em;
+  font-family: "clubland";
+}
+
+.btnStart {
+  margin: 15% auto;
+  padding: 0.5em;
+  outline-style: none;
+  background-color: greenyellow;
+  border-radius: 1.2em;
+  box-shadow: 0.5px 0.5px 500px 300px rgb(81, 243, 66);
+  font-size: 2em;
+}
+
+a {
+  color: black;
+  font-family: "clubland";
+  font-size: 1.3em;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main_box {
+  display: flex;
+
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+/********************************************Canvas Player****************************/
+.player1,
+.player2,
+.canvas {
+  margin-top: var(--margin-top-general);
+}
+
+.player1,
+.player2 {
+  border: 1px solid black;
+}
+
+.player1 {
+  margin-right: var(--marginplayers);
+}
+
+.player2 {
+  margin-left: var(--marginplayers);
+}
+
+.canvas {
+  width: var(--canvas_w);
+  height: var(--canvas_h);
+  border: 1px solid black;
+}
+
+.messageBox {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  font-family: "Trebuchet MS";
+  font-size: 2em;
+}
+
+.launch-infoGame {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  font-family: "Trebuchet MS";
+  font-size: 2em;
+}
+/********************************************Buttons****************************/
+.box-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.button-Attack,
+.button-Defense {
+  margin-top: 1em;
+  padding: var(--padding-buttonsUD) var(--padding-buttonsLR);
+  background-color: blue;
+  color: white;
+  font-size: 1.5em;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.button-Attack {
+  margin-right: 1em;
+}
+
+.button-Defense {
+  margin-left: 1em;
+}
+
+.play {
+  margin-right: var(--marginButtons);
+}
+
+.exit {
+  margin-left: var(--marginButtons);
+}
+
+/********************************************Modal Start Game****************************/
+
+.modal-body > h1 {
+  font-size: 3em;
+}
+
+.modal-body,
+.buttons-modal {
+  display: flex;
+  justify-content: center;
+}
+
+/********************************************Modal Info Play Game****************************/
+
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(251, 255, 0, 0.4);
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modalDialog:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.info-modal {
+  width: 80%;
+  height: 70%;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  transition: opacity 400ms ease-in;
+}
+
+.close {
+  background: black;
+  line-height: 25px;
+  position: absolute;
+  right: -10px;
+  text-align: center;
+  padding-top: 12px;
+  padding-left: 2px;
+  top: -20px;
+  width: 48px;
+  height: 48px;
+  text-decoration: none;
+  font-weight: 4em;
+  border-radius: 24px;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+  background: black;
+}
+
+.title-game-rules {
+  text-align: center;
+  font-family: "clubland";
+  font-size: 3.8em;
+  font-weight: bold;
+}
+
+.rules-text {
+  font-size: 1.5em;
+  margin: 1em 2.5em 0;
+  margin-left: 4em;
+  color: black;
+}
+
+/********************************************Game Over modal****************************/
+.buttons-gameOver-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.game-over {
+  margin-bottom: 2em;
+}
+
+.game-over > h1 {
+  font-family: "clubland";
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.playAgain {
+  margin-top: 1em;
+  background-color: green;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "clubland";
+}
+
+.playAgain {
+  margin-right: 0.5em;
+  padding: var(--padding-buttonsUD) var(--padding-buttonsLR);
+}
+
+.playAgain > a {
+  color: white;
+  font-size: 2em;
+}
+
+.textLoserPlayer {
+  font-size: 2em;
+  font-family: "clubland";
+  margin-bottom: 1em;
+}
