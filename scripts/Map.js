@@ -47,7 +47,6 @@ class Maps {
   }
 
   setGuns(quantity) {
-    // this.guns = [];
     for (let index = 0; index < quantity; index++) {
       const x = App.random(this.size.x);
       const y = App.random(this.size.y);

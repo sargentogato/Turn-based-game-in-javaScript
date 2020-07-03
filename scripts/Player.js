@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable no-console */
 class Player {
   constructor(imagePlayer, name, score, positionY, positionX) {
     this.imagePlayer = imagePlayer;
@@ -108,7 +106,6 @@ class Player {
     return collision;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   // Checking who player is moving
   whoPlayerIsMoving(map, currentPlayer) {
     let playerToFind;
@@ -155,7 +152,6 @@ class Player {
     }
   }
 
-  // eslint-disable-next-line class-methods-use-this
   dispatchFightEvent() {
     const event = new Event("fight", { bubbles: true });
     document.dispatchEvent(event);
@@ -163,7 +159,10 @@ class Player {
 
   getWeapons(map) {
     const playerPosition = map.mapGame[this.y][this.x];
-    const weaponIndex = map.weapons.findIndex(weapon => weapon.idWeapon == playerPosition); // devuelve el index del array cuando encuentra un arma
+    const weaponIndex = map.weapons.findIndex(
+      (weapon) => weapon.idWeapon == playerPosition
+    ); // devuelve el index del array cuando encuentra un arma
+
     /**
      * Ese index no servirá para extraer el elemento del array y ponerlo dentro del this.weapons que es el array que almacena las armas de los jugadores.
      */
@@ -171,7 +170,9 @@ class Player {
     if (weaponIndex !== -1) {
       // Existe un arma
       const currentWeapon = this.weapon;
-      const takingWeapon = map.weapons.find(weapon => weapon.idWeapon == playerPosition); // Recorriendo array almacenando arma
+      const takingWeapon = map.weapons.find(
+        (weapon) => weapon.idWeapon == playerPosition
+      ); // Recorriendo array almacenando arma
 
       this.weapon = takingWeapon; // guardando arma
       map.weapons.splice(weaponIndex, 1); // Sacando el arma

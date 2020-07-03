@@ -31,6 +31,7 @@ const down = 40;
 const left = 37;
 const right = 39;
 
+/**** hidden text ****/
 $(".welcome").hide();
 $(".to").hide();
 $(".the").hide();
@@ -38,6 +39,7 @@ $(".game").hide();
 $("button").hide();
 $("#messageBox").show();
 
+/**** Showing text step by step ****/
 setTimeout(() => {
   $(".welcome").toggle(500);
   $(".to").toggle(1000);
@@ -46,8 +48,7 @@ setTimeout(() => {
   $("#startButton").show(3000);
 }, 1000);
 
-// $(document).on('ready', heartBit())
-
+/**** Heartbeat effect ****/
 setInterval(() => {
   $("#startButton").animate(
     {

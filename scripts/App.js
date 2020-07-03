@@ -156,8 +156,6 @@ class App {
 
   addListtener() {
     let direction;
-    // const captureKey = document.addEventListener;
-    // captureKey("keydown", this.movementManager);
     $(document).on("keydown", this.movementManager);
     $(document).on("fight", () => {
       this.fight();
