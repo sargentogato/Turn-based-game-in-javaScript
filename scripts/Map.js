@@ -7,7 +7,7 @@ class Maps {
     this.size = { x: sizeX, y: sizeY, case: sizeCase };
     this.ctx = this.canvas.getContext("2d");
     this.tileMap = new Image();
-    this.tileMap.src = "./img/tilemap.png";
+    this.tileMap.src = "img/tilemap.png";
     this.mapGame = [];
     this.FPS = 50;
     this.weapons = [];

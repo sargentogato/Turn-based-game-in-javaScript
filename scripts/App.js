@@ -51,7 +51,7 @@ class App {
 
   dibuja() {
     let tileMap = this.map.tileMap;
-    tileMap.src = ".././img/tilemap.png";
+    tileMap.src = "img/tilemap.png";
     let ctxPlayer1 = this.boxPlayer1.getContext("2d");
     let ctxPlayer2 = this.boxPlayer2.getContext("2d");
     let imageCutX = 32; // sx : X coordinate, upper left corner image, horizontal
